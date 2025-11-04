@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - SmartBuild Constructions</title>
+  
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    .accordion-item { margin-bottom: 1rem; border: 1px solid #E0E0E0; border-radius: 0.5rem; overflow: hidden; }
+    .accordion-header { padding: 1.25rem 1.5rem; cursor: pointer; background: white; position: relative; font-weight: 600; transition: all 0.3s; }
+    .accordion-header:hover { background: #F5F5F5; }
+    .accordion-header::after { content: '+'; position: absolute; right: 1.5rem; font-size: 1.5rem; color: #FF9800; transition: transform 0.3s; }
+    .accordion-item.active .accordion-header::after { transform: rotate(45deg); }
+    .accordion-item.active .accordion-header { background: linear-gradient(135deg, #FF9800, #FFC107); color: white; }
+    .accordion-item.active .accordion-header::after { color: white; }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .accordion-item.active .accordion-content { max-height: 500px; }
+    .accordion-content-inner { padding: 1.5rem; }
+  </style>
+</head>
+<body>
+  
+  <div class="page-loader"><div class="loader-spinner"></div></div>
+  <div id="header-placeholder"></div>
+
+  <section class="breadcrumb-section">
+    <div class="container text-center">
+      <h1 data-aos="fade-down">Frequently Asked Questions</h1>
+      <nav class="breadcrumb justify-content-center" data-aos="fade-up">
+        <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+        <div class="breadcrumb-item active">FAQ</div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Got Questions? We've Got Answers</h2>
+            <p>Find answers to common questions about our services</p>
+          </div>
+
+          <div data-aos="fade-up">
+            <div class="accordion-item active">
+              <div class="accordion-header">How much does construction cost in India?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Construction costs vary based on location, materials, and design. On average, residential construction costs range from ₹1,500-2,500 per sq.ft for basic construction and ₹2,500-4,000 per sq.ft for premium construction. Commercial projects typically cost ₹2,000-3,500 per sq.ft. We provide detailed quotations based on your specific requirements.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">What is the typical timeline for building a house?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  A typical residential house takes 8-12 months to complete, depending on size and complexity. This includes design approval (1-2 months), foundation (1-2 months), structure (3-4 months), and finishing (3-4 months). We provide detailed project timelines during the planning phase.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Do you provide architectural design services?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Yes! We offer comprehensive architectural and interior design services. Our in-house team of architects creates innovative designs tailored to your needs, including 2D/3D plans, structural design, and 3D visualizations. This is included in our full-service construction packages.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">What areas do you serve?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  We primarily serve Bangalore, Chennai, Hyderabad, Mumbai, and Pune. We also take on select projects in other major Indian cities. Contact us to discuss your project location and we'll let you know if we can serve your area.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Is there a warranty on construction work?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Yes, we provide a 5-year warranty on structural work and 1-year warranty on finishing work. This covers defects in materials and workmanship. Extended warranty options are also available.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">How do payments work?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Payments are milestone-based: 10% advance, 20% after foundation, 30% after structure completion, 30% after finishing, and 10% final payment after handover. We accept bank transfers, cheques, and digital payments. GST invoices are provided for all transactions.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Do you handle government approvals and permits?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Yes, we assist with all necessary approvals including building permits, NOCs, and completion certificates. Our team is experienced in dealing with local authorities and ensures full compliance with regulations.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Can I make changes during construction?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Minor changes can be accommodated with proper documentation and cost adjustment. Major changes may affect timeline and budget. We recommend finalizing designs before construction begins to avoid delays and extra costs.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">What makes SmartBuild different from other contractors?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  We offer: 15+ years experience, 500+ completed projects, in-house architects and engineers, transparent pricing, timely delivery (95% on-time record), 5-year warranty, quality materials from certified suppliers, and 24/7 project support. We're a one-stop solution for all construction needs.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Do you offer interior design services separately?</div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner text-secondary">
+                  Yes, we offer standalone interior design and execution services for existing properties. This includes space planning, furniture design, modular kitchens, false ceilings, lighting, and complete turnkey solutions.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-bg-light py-6">
+    <div class="container text-center">
+      <div data-aos="zoom-in">
+        <h2 class="mb-4">Still Have Questions?</h2>
+        <p class="text-secondary mb-5" style="max-width: 600px; margin: 0 auto 2rem;">
+          Can't find what you're looking for? Contact our team and we'll be happy to help.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+          <a href="tel:+919876543210" class="btn btn-outline-primary btn-lg"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <div id="modals-placeholder"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../partials/header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+    fetch('../partials/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+    fetch('../partials/modals.html').then(r => r.text()).then(d => document.getElementById('modals-placeholder').innerHTML = d);
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration: 800, easing: 'ease-in-out', once: true});</script>
+</body>
+</html>
+

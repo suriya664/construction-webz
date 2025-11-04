@@ -1,0 +1,291 @@
+/*
+ * SmartBuild Construction Template - RTL Support
+ * For Arabic, Hebrew, Urdu and other RTL languages
+ */
+
+/* ===== RTL DIRECTION ===== */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ===== TYPOGRAPHY ===== */
+body.rtl h1,
+body.rtl h2,
+body.rtl h3,
+body.rtl h4,
+body.rtl h5,
+body.rtl h6 {
+  text-align: right;
+}
+
+body.rtl p {
+  text-align: right;
+}
+
+/* ===== NAVIGATION ===== */
+body.rtl .navbar-nav {
+  flex-direction: row-reverse;
+}
+
+body.rtl .navbar-nav .nav-item {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+body.rtl .navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
+body.rtl .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* ===== BUTTONS ===== */
+body.rtl .btn {
+  text-align: center;
+}
+
+body.rtl .btn i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+body.rtl .btn i.right {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* ===== BREADCRUMB ===== */
+body.rtl .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+body.rtl .breadcrumb-item + .breadcrumb-item::before {
+  content: '‹';
+  margin-left: 0.5rem;
+  margin-right: 0;
+  float: right;
+}
+
+/* ===== FORMS ===== */
+body.rtl .form-label {
+  text-align: right;
+}
+
+body.rtl .form-check {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+body.rtl .form-check-input {
+  float: right;
+  margin-right: -1.5rem;
+  margin-left: 0;
+}
+
+body.rtl .form-select {
+  background-position: left 0.75rem center;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+}
+
+/* ===== CARDS ===== */
+body.rtl .card-body {
+  text-align: right;
+}
+
+body.rtl .card-title {
+  text-align: right;
+}
+
+body.rtl .card-text {
+  text-align: right;
+}
+
+/* ===== LISTS ===== */
+body.rtl ul,
+body.rtl ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+body.rtl .list-inline {
+  padding-right: 0;
+}
+
+/* ===== GRID & LAYOUT ===== */
+body.rtl .row {
+  flex-direction: row-reverse;
+}
+
+body.rtl .text-left,
+body.rtl .text-start {
+  text-align: right !important;
+}
+
+body.rtl .text-right,
+body.rtl .text-end {
+  text-align: left !important;
+}
+
+/* ===== PADDING & MARGIN RTL ===== */
+body.rtl .pl-0, body.rtl .ps-0 { padding-right: 0 !important; padding-left: auto; }
+body.rtl .pl-1, body.rtl .ps-1 { padding-right: 0.25rem !important; padding-left: auto; }
+body.rtl .pl-2, body.rtl .ps-2 { padding-right: 0.5rem !important; padding-left: auto; }
+body.rtl .pl-3, body.rtl .ps-3 { padding-right: 1rem !important; padding-left: auto; }
+body.rtl .pl-4, body.rtl .ps-4 { padding-right: 1.5rem !important; padding-left: auto; }
+body.rtl .pl-5, body.rtl .ps-5 { padding-right: 3rem !important; padding-left: auto; }
+
+body.rtl .pr-0, body.rtl .pe-0 { padding-left: 0 !important; padding-right: auto; }
+body.rtl .pr-1, body.rtl .pe-1 { padding-left: 0.25rem !important; padding-right: auto; }
+body.rtl .pr-2, body.rtl .pe-2 { padding-left: 0.5rem !important; padding-right: auto; }
+body.rtl .pr-3, body.rtl .pe-3 { padding-left: 1rem !important; padding-right: auto; }
+body.rtl .pr-4, body.rtl .pe-4 { padding-left: 1.5rem !important; padding-right: auto; }
+body.rtl .pr-5, body.rtl .pe-5 { padding-left: 3rem !important; padding-right: auto; }
+
+body.rtl .ml-0, body.rtl .ms-0 { margin-right: 0 !important; margin-left: auto; }
+body.rtl .ml-1, body.rtl .ms-1 { margin-right: 0.25rem !important; margin-left: auto; }
+body.rtl .ml-2, body.rtl .ms-2 { margin-right: 0.5rem !important; margin-left: auto; }
+body.rtl .ml-3, body.rtl .ms-3 { margin-right: 1rem !important; margin-left: auto; }
+body.rtl .ml-4, body.rtl .ms-4 { margin-right: 1.5rem !important; margin-left: auto; }
+body.rtl .ml-5, body.rtl .ms-5 { margin-right: 3rem !important; margin-left: auto; }
+body.rtl .ml-auto, body.rtl .ms-auto { margin-right: auto !important; margin-left: 0; }
+
+body.rtl .mr-0, body.rtl .me-0 { margin-left: 0 !important; margin-right: auto; }
+body.rtl .mr-1, body.rtl .me-1 { margin-left: 0.25rem !important; margin-right: auto; }
+body.rtl .mr-2, body.rtl .me-2 { margin-left: 0.5rem !important; margin-right: auto; }
+body.rtl .mr-3, body.rtl .me-3 { margin-left: 1rem !important; margin-right: auto; }
+body.rtl .mr-4, body.rtl .me-4 { margin-left: 1.5rem !important; margin-right: auto; }
+body.rtl .mr-5, body.rtl .me-5 { margin-left: 3rem !important; margin-right: auto; }
+body.rtl .mr-auto, body.rtl .me-auto { margin-left: auto !important; margin-right: 0; }
+
+/* ===== ICONS ===== */
+body.rtl .icon-box .icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== STATS ===== */
+body.rtl .stats-box {
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+body.rtl .footer-links li {
+  text-align: right;
+}
+
+body.rtl .footer {
+  text-align: right;
+}
+
+body.rtl .social-links {
+  flex-direction: row-reverse;
+}
+
+/* ===== MODALS ===== */
+body.rtl .modal-header .btn-close {
+  margin: 0 auto 0 -0.5rem;
+}
+
+/* ===== TABLE ===== */
+body.rtl .table {
+  text-align: right;
+}
+
+body.rtl .table thead th {
+  text-align: right;
+}
+
+body.rtl .table tbody td {
+  text-align: right;
+}
+
+/* ===== ALERTS ===== */
+body.rtl .alert {
+  text-align: right;
+}
+
+body.rtl .alert .btn-close {
+  left: 0;
+  right: auto;
+}
+
+/* ===== PAGINATION ===== */
+body.rtl .pagination {
+  flex-direction: row-reverse;
+}
+
+/* ===== PROJECT GALLERY ===== */
+body.rtl .project-filters {
+  flex-direction: row-reverse;
+}
+
+body.rtl .project-card {
+  text-align: right;
+}
+
+/* ===== TEAM CARDS ===== */
+body.rtl .team-card {
+  text-align: right;
+}
+
+body.rtl .team-social {
+  flex-direction: row-reverse;
+}
+
+/* ===== TESTIMONIALS ===== */
+body.rtl .testimonial-card {
+  text-align: right;
+}
+
+body.rtl .testimonial-rating {
+  flex-direction: row-reverse;
+}
+
+/* ===== LANGUAGE SPECIFIC FONTS ===== */
+body.rtl[lang="ar"] {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+body.rtl[lang="he"] {
+  font-family: 'Heebo', 'Rubik', sans-serif;
+}
+
+body.rtl[lang="ur"] {
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* ===== RTL ANIMATIONS ===== */
+@keyframes slideInRight-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body.rtl .slide-in-right {
+  animation: slideInRight-rtl 0.6s ease-out;
+}
+
+body.rtl .slide-in-left {
+  animation: slideInLeft-rtl 0.6s ease-out;
+}
+

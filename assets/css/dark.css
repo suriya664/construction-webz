@@ -1,0 +1,229 @@
+/*
+ * SmartBuild Construction Template - Dark Mode
+ * Optional premium dark layout
+ */
+
+/* ===== DARK MODE VARIABLES ===== */
+body.dark-mode {
+  --dark-bg-primary: #121212;
+  --dark-bg-secondary: #1E1E1E;
+  --dark-bg-tertiary: #2C2C2C;
+  --dark-text-primary: #E0E0E0;
+  --dark-text-secondary: #B0B0B0;
+  --dark-border: #333333;
+}
+
+/* ===== DARK MODE STYLES ===== */
+body.dark-mode {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode p,
+body.dark-mode li {
+  color: var(--dark-text-secondary);
+}
+
+/* Header & Navigation */
+body.dark-mode .navbar {
+  background-color: var(--dark-bg-secondary);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark-mode .navbar .nav-link {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .navbar .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Cards */
+body.dark-mode .card {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .card-title {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .card-text {
+  color: var(--dark-text-secondary);
+}
+
+/* Forms */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: var(--dark-bg-tertiary);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background-color: var(--dark-bg-tertiary);
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .form-label {
+  color: var(--dark-text-primary);
+}
+
+/* Sections */
+body.dark-mode .section-bg-light {
+  background-color: var(--dark-bg-secondary);
+}
+
+body.dark-mode .section-title h2 {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .section-title p {
+  color: var(--dark-text-secondary);
+}
+
+/* Stats Box */
+body.dark-mode .stats-box {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .stats-box .counter {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .stats-box .label {
+  color: var(--dark-text-secondary);
+}
+
+/* Footer */
+body.dark-mode .footer {
+  background-color: var(--dark-bg-secondary);
+  border-top: 1px solid var(--dark-border);
+}
+
+body.dark-mode .footer h5 {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .footer p,
+body.dark-mode .footer a {
+  color: var(--dark-text-secondary);
+}
+
+body.dark-mode .footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Modals */
+body.dark-mode .modal-content {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: var(--dark-border);
+}
+
+body.dark-mode .modal-footer {
+  border-top-color: var(--dark-border);
+}
+
+body.dark-mode .modal-title {
+  color: var(--dark-text-primary);
+}
+
+/* Tables */
+body.dark-mode .table {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255,255,255,0.02);
+}
+
+body.dark-mode .table-bordered {
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .table-bordered td,
+body.dark-mode .table-bordered th {
+  border-color: var(--dark-border);
+}
+
+/* Dropdown */
+body.dark-mode .dropdown-menu {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+body.dark-mode .dropdown-item {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: var(--dark-bg-tertiary);
+  color: var(--primary-color);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.dark-mode-toggle i {
+  transition: transform 0.5s ease;
+}
+
+.dark-mode-toggle:active i {
+  transform: rotate(360deg);
+}
+
+/* Icon swap */
+body.dark-mode .dark-mode-toggle .sun-icon {
+  display: inline-block;
+}
+
+body.dark-mode .dark-mode-toggle .moon-icon {
+  display: none;
+}
+
+body:not(.dark-mode) .dark-mode-toggle .sun-icon {
+  display: none;
+}
+
+body:not(.dark-mode) .dark-mode-toggle .moon-icon {
+  display: inline-block;
+}
+

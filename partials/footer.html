@@ -1,0 +1,508 @@
+<!--
+  SmartBuild Construction Template - Footer
+  Footer with links, newsletter, contact info
+-->
+
+<style>
+.footer {
+  background: linear-gradient(135deg, #1A237E, #283593);
+  color: rgba(255,255,255,0.9);
+  padding: 4rem 0 0;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+  color: #FFC107;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-about p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links a::before {
+  content: '▸';
+  color: #FF9800;
+  font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+  color: #FFC107;
+  padding-left: 0.5rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-contact-item i {
+  color: #FF9800;
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.footer-contact-item a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+
+.footer-contact-item a:hover {
+  color: #FFC107;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 0.375rem;
+  font-size: 0.9375rem;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #FFC107;
+  background: rgba(255,255,255,0.15);
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  background: #FF9800;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #F57C00;
+  transform: translateY(-2px);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 50%;
+  color: currentColor;
+  border: 2px solid currentColor;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: currentColor;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Brand colors */
+.social-link.facebook { color: #1877F2; }
+.social-link.twitter { color: #1DA1F2; }
+.social-link.instagram { color: #E4405F; }
+.social-link.linkedin { color: #0A66C2; }
+.social-link.youtube { color: #FF0000; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem 0;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footer-bottom-links a:hover {
+  color: #FFC107;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #FF9800, #FFC107);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr; /* ensure four columns on desktop */
+  }
+}
+</style>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <!-- About Section -->
+      <div class="footer-section footer-about">
+        <h4>SmartBuild Constructions</h4>
+        <p>
+          Building dreams into reality with over 15 years of excellence in construction, 
+          architecture, and design. Your trusted partner for residential and commercial projects across India.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link facebook" title="Facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link twitter" title="Twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link instagram" title="Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link youtube" title="YouTube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="quote.html">Get a Quote</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="service-details.html">Building Construction</a></li>
+          <li><a href="service-details.html">Architecture & Design</a></li>
+          <li><a href="service-details.html">Interior Design</a></li>
+          <li><a href="service-details.html">Renovation & Remodeling</a></li>
+          <li><a href="service-details.html">Project Management</a></li>
+          <li><a href="service-details.html">Consulting Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>SmartBuild Constructions Pvt. Ltd.</strong><br>
+            21, Nehru Nagar<br>
+            Chennai, Tamil Nadu 600042
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <a href="tel:+919876543210">+91 98765 43210</a><br>
+            <a href="tel:+914423456789">044 2345 6789</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <a href="mailto:info@smartbuild.in">info@smartbuild.in</a><br>
+            <a href="mailto:projects@smartbuild.in">projects@smartbuild.in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h4 style="color: #FFC107; margin-bottom: 1rem;">Subscribe to Our Newsletter</h4>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
+          Get the latest updates on projects, construction tips, and industry news.
+        </p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Enter your email address" 
+            required
+            aria-label="Email address"
+          >
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p style="margin: 0;">
+        © <span id="currentYear">2025</span> SmartBuild Constructions. All rights reserved. 
+        <span style="color: #FF9800;">❤</span> Made in India
+      </p>
+      <ul class="footer-bottom-links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="privacy-policy.html#terms">Terms of Service</a></li>
+        <li><a href="contact.html">Support</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Dark Mode Toggle (Optional) -->
+<button class="dark-mode-toggle" aria-label="Toggle dark mode">
+  <span class="sun-icon">☀️</span>
+  <span class="moon-icon">🌙</span>
+</button>
+
+<script>
+  // Update current year
+  if (document.getElementById('currentYear')) {
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  }
+
+  // Back to Top Button
+  (function() {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  })();
+
+  // Newsletter Form Submission
+  (function() {
+    const newsletterForm = document.getElementById('newsletterForm');
+    
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        
+        // Here you would typically send to your backend
+        alert('Thank you for subscribing! We\'ll keep you updated.');
+        newsletterForm.reset();
+      });
+    }
+  })();
+
+  // Smooth scroll for anchor links
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  })();
+
+  // Adjust footer links based on current page location
+  (function() {
+    const currentPath = window.location.pathname;
+    const currentHref = window.location.href;
+    const isInPagesFolder = currentPath.includes('/pages/') || currentHref.includes('/pages/');
+    const isRootIndex = currentPath.endsWith('/') || currentPath.endsWith('/index.html') || (!currentPath.includes('/pages/') && currentPath.split('/').filter(p => p && !p.includes('.')).length <= 1);
+    
+    // Update footer links
+    const footerLinks = document.querySelectorAll('.footer-links a, .footer-bottom-links a');
+    footerLinks.forEach(link => {
+      let href = link.getAttribute('href');
+      
+      // Skip external links, anchors, tel, mailto
+      if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:')) {
+        return;
+      }
+
+      // Adjust paths
+      if (isInPagesFolder) {
+        // From pages/ folder: other pages are in same folder, index is up one level
+        if (href === 'index.html' || href === '') {
+          link.setAttribute('href', '../index.html');
+        } else if (href.endsWith('.html') && !href.startsWith('../') && !href.startsWith('/')) {
+          // Pages in same folder - keep as is
+        }
+      } else if (isRootIndex) {
+        // From root: all other pages are in pages/ folder
+        if (href && href.endsWith('.html') && href !== 'index.html' && !href.startsWith('pages/') && !href.startsWith('../') && !href.startsWith('/')) {
+          link.setAttribute('href', 'pages/' + href);
+        }
+      }
+    });
+  })();
+</script>
+

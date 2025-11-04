@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#g)"/>
+  <!-- Crane hook icon -->
+  <g fill="#1A237E">
+    <path d="M128 44a20 20 0 0 0-20 20v24a20 20 0 0 0 40 0V64a20 20 0 0 0-20-20zm8 44a8 8 0 0 1-16 0V64a8 8 0 1 1 16 0v24z"/>
+    <path d="M168 116h-36v28.3a32 32 0 1 1-16 0V116H80a8 8 0 0 1 0-16h88a8 8 0 0 1 0 16zm-52 56a16 16 0 1 0 16-16 16 16 0 0 0-16 16z"/>
+  </g>
+</svg>
+
+
+
+

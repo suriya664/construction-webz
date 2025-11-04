@@ -1,0 +1,494 @@
+<!--
+  SmartBuild Construction Template - Modals
+  Quick Contact, Quote Modal, etc.
+-->
+
+<style>
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 2rem;
+  border-bottom: 1px solid #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  color: white;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Success/Error Alert */
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    width: 95%;
+    border-radius: 0.5rem;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<!-- Quick Contact Modal -->
+<div class="modal" id="quickContactModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Quick Contact</h3>
+      <button class="modal-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body">
+      <form id="quickContactForm" class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qc-name" class="form-label">Full Name *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="qc-name" 
+              name="name" 
+              required
+              placeholder="Enter your full name"
+            >
+          </div>
+          <div class="form-group">
+            <label for="qc-phone" class="form-label">Phone Number *</label>
+            <input 
+              type="tel" 
+              class="form-control" 
+              id="qc-phone" 
+              name="phone" 
+              required
+              placeholder="+91 XXXXX XXXXX"
+            >
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="qc-email" class="form-label">Email Address *</label>
+          <input 
+            type="email" 
+            class="form-control" 
+            id="qc-email" 
+            name="email" 
+            required
+            placeholder="your.email@example.com"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="qc-subject" class="form-label">Subject *</label>
+          <select class="form-control form-select" id="qc-subject" name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="quote">Request a Quote</option>
+            <option value="support">Technical Support</option>
+            <option value="partnership">Partnership Opportunity</option>
+            <option value="feedback">Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group mb-0">
+          <label for="qc-message" class="form-label">Message *</label>
+          <textarea 
+            class="form-control" 
+            id="qc-message" 
+            name="message" 
+            rows="4" 
+            required
+            placeholder="Tell us about your project or inquiry..."
+          ></textarea>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary w-100">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Quote Modal -->
+<div class="modal" id="quickQuoteModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" style="max-width: 700px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Request a Free Quote</h3>
+      <button class="modal-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="color: #757575; margin-bottom: 1.5rem;">
+        Fill out the form below and our team will contact you within 24 hours with a detailed quote.
+      </p>
+      <form id="quickQuoteFormModal" class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qq-name" class="form-label">Full Name *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="qq-name" 
+              name="name" 
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="qq-phone" class="form-label">Phone Number *</label>
+            <input 
+              type="tel" 
+              class="form-control" 
+              id="qq-phone" 
+              name="phone" 
+              required
+              placeholder="+91 XXXXX XXXXX"
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="qq-email" class="form-label">Email Address *</label>
+          <input 
+            type="email" 
+            class="form-control" 
+            id="qq-email" 
+            name="email" 
+            required
+          >
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qq-projectType" class="form-label">Project Type *</label>
+            <select class="form-control form-select" id="qq-projectType" name="projectType" required>
+              <option value="">Select project type</option>
+              <option value="residential">Residential Construction</option>
+              <option value="commercial">Commercial Building</option>
+              <option value="interior">Interior Design</option>
+              <option value="renovation">Renovation</option>
+              <option value="architecture">Architecture Design</option>
+              <option value="consulting">Consulting</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="qq-budget" class="form-label">Budget Range *</label>
+            <select class="form-control form-select" id="qq-budget" name="budget" required>
+              <option value="">Select budget</option>
+              <option value="5-10">₹5 - 10 Lakhs</option>
+              <option value="10-25">₹10 - 25 Lakhs</option>
+              <option value="25-50">₹25 - 50 Lakhs</option>
+              <option value="50-100">₹50 Lakhs - 1 Crore</option>
+              <option value="100+">Above ₹1 Crore</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qq-location" class="form-label">Project Location *</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="qq-location" 
+              name="location" 
+              required
+              placeholder="City, State"
+            >
+          </div>
+          <div class="form-group">
+            <label for="qq-timeline" class="form-label">Timeline *</label>
+            <select class="form-control form-select" id="qq-timeline" name="timeline" required>
+              <option value="">Select timeline</option>
+              <option value="immediate">Immediate (Within 1 month)</option>
+              <option value="1-3">1-3 Months</option>
+              <option value="3-6">3-6 Months</option>
+              <option value="6+">More than 6 Months</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mb-0">
+          <label for="qq-description" class="form-label">Project Description</label>
+          <textarea 
+            class="form-control" 
+            id="qq-description" 
+            name="description" 
+            rows="3"
+            placeholder="Briefly describe your project requirements..."
+          ></textarea>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary w-100 btn-lg">
+            Request Quote
+          </button>
+        </div>
+
+        <p style="font-size: 0.8125rem; color: #9E9E9E; margin-top: 1rem; text-align: center;">
+          By submitting this form, you agree to our <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Image Gallery Modal -->
+<div class="modal" id="imageGalleryModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" style="max-width: 900px; padding: 0;">
+    <div class="modal-header">
+      <h3 class="modal-title">Project Gallery</h3>
+      <button class="modal-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body" style="padding: 1rem;">
+      <div id="galleryImages" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+        <!-- Images will be dynamically loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal" id="videoModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" style="max-width: 900px; padding: 0;">
+    <div class="modal-header">
+      <h3 class="modal-title">Project Video</h3>
+      <button class="modal-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body" style="padding: 0;">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe 
+          id="videoFrame" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal" id="confirmModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" style="max-width: 450px;">
+    <div class="modal-header">
+      <h3 class="modal-title">Confirm Action</h3>
+      <button class="modal-close" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body">
+      <p id="confirmMessage" style="font-size: 1.125rem; color: #212121;">
+        Are you sure you want to proceed?
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline-primary" onclick="document.getElementById('confirmModal').classList.remove('active')">
+        Cancel
+      </button>
+      <button class="btn btn-primary" id="confirmActionBtn">
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" style="max-width: 450px; text-align: center;">
+    <div class="modal-header" style="background: linear-gradient(135deg, #4CAF50, #66BB6A); justify-content: center; border: none;">
+      <div style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+        ✓
+      </div>
+    </div>
+    <div class="modal-body" style="padding: 2rem;">
+      <h3 style="color: #4CAF50; margin-bottom: 1rem;">Success!</h3>
+      <p id="successMessage" style="font-size: 1.125rem; color: #757575;">
+        Your request has been submitted successfully.
+      </p>
+    </div>
+    <div class="modal-footer" style="justify-content: center;">
+      <button class="btn btn-primary" onclick="document.getElementById('successModal').classList.remove('active')">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Modal functionality
+document.querySelectorAll('[data-modal]').forEach(trigger => {
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    const modalId = this.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+document.querySelectorAll('.modal-close, .modal-backdrop').forEach(close => {
+  close.addEventListener('click', function() {
+    const modal = this.closest('.modal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Stop video if closing video modal
+      if (modal.id === 'videoModal') {
+        document.getElementById('videoFrame').src = '';
+      }
+    }
+  });
+});
+
+// Escape key to close modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.active').forEach(modal => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// Quick contact form submission (AJAX handled in ajax.js)
+const quickContactForm = document.getElementById('quickContactForm');
+if (quickContactForm) {
+  quickContactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Form submission is handled by ajax.js
+    // Close modal after successful submission
+    setTimeout(() => {
+      document.getElementById('quickContactModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }, 2000);
+  });
+}
+
+// Quick quote form submission
+const quickQuoteFormModal = document.getElementById('quickQuoteFormModal');
+if (quickQuoteFormModal) {
+  quickQuoteFormModal.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Form submission is handled by ajax.js
+    setTimeout(() => {
+      document.getElementById('quickQuoteModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }, 2000);
+  });
+}
+</script>
+

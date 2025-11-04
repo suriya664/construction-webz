@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartBuild Construction Projects - View our portfolio of residential, commercial and interior projects across India.">
+  <title>Our Projects - SmartBuild Constructions</title>
+  
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    .project-item {
+      transition: all 0.3s ease;
+    }
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border: 2px solid #E0E0E0;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, #FF9800, #FFC107);
+      color: white;
+      border-color: #FF9800;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="page-loader"><div class="loader-spinner"></div></div>
+  <div id="header-placeholder"></div>
+
+  <section class="breadcrumb-section">
+    <div class="container text-center">
+      <h1 data-aos="fade-down">Our Projects</h1>
+      <nav class="breadcrumb justify-content-center" data-aos="fade-up">
+        <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+        <div class="breadcrumb-item active">Projects</div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-center flex-wrap gap-3 mb-5" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="*">All Projects</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="interior">Interior</button>
+        <button class="filter-btn" data-filter="renovation">Renovation</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 project-item residential" data-aos="fade-up">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Luxury Villa" style="height: 280px; object-fit: cover; transition: transform 0.3s;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge badge-primary">Residential</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Modern Luxury Villa</h4>
+              <p class="text-secondary mb-3">4 BHK contemporary design villa with smart home features and landscaped gardens.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Bangalore</span>
+                <span class="text-secondary"><i class="fas fa-ruler-combined me-1"></i> 3500 sq.ft</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item commercial" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Office Complex" style="height: 280px; object-fit: cover;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge badge-secondary">Commercial</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Corporate Office Complex</h4>
+              <p class="text-secondary mb-3">15-floor modern office building with premium amenities and parking facilities.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Chennai</span>
+                <span class="text-secondary"><i class="fas fa-ruler-combined me-1"></i> 1,20,000 sq.ft</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item residential" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Apartments" style="height: 280px; object-fit: cover;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge badge-primary">Residential</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Gated Community Apartments</h4>
+              <p class="text-secondary mb-3">120 premium 2&3 BHK apartments with club house and swimming pool.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Hyderabad</span>
+                <span class="text-secondary"><i class="fas fa-building me-1"></i> 120 Units</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item interior" data-aos="fade-up">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Interior" style="height: 280px; object-fit: cover;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge" style="background: #4CAF50; color: white;">Interior</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Luxury Penthouse Interior</h4>
+              <p class="text-secondary mb-3">Contemporary interior design with Italian marble and designer furniture.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                <span class="text-secondary"><i class="fas fa-ruler-combined me-1"></i> 4200 sq.ft</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item commercial" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Shopping Mall" style="height: 280px; object-fit: cover;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge badge-secondary">Commercial</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Premium Shopping Mall</h4>
+              <p class="text-secondary mb-3">Multi-level shopping complex with entertainment zone and food court.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Pune</span>
+                <span class="text-secondary"><i class="fas fa-ruler-combined me-1"></i> 2,50,000 sq.ft</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item renovation" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100" style="border: none;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Renovation" style="height: 280px; object-fit: cover;">
+              <div style="position: absolute; top: 1rem; right: 1rem;">
+                <span class="badge" style="background: #9C27B0; color: white;">Renovation</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Heritage Building Restoration</h4>
+              <p class="text-secondary mb-3">Complete restoration of 100-year old heritage property with modern amenities.</p>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary"><i class="fas fa-map-marker-alt me-1"></i> Delhi</span>
+                <span class="text-secondary"><i class="fas fa-ruler-combined me-1"></i> 8500 sq.ft</span>
+              </div>
+              <a href="project-details.html" class="btn btn-outline-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="quote.html" class="btn btn-primary btn-lg">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <div id="modals-placeholder"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../partials/header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+    fetch('../partials/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+    fetch('../partials/modals.html').then(r => r.text()).then(d => document.getElementById('modals-placeholder').innerHTML = d);
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration: 800, easing: 'ease-in-out', once: true});</script>
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SmartBuild Constructions</title>
+  
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    .sidebar{position:fixed;left:0;top:0;width:260px;height:100vh;background:#1A237E;padding:2rem 0;overflow-y:auto;z-index:1000;transition:all 0.3s;}
+    .sidebar-brand{padding:0 2rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:2rem;}
+    .sidebar-brand h4{color:white;margin:0;}
+    .sidebar-menu{list-style:none;padding:0;margin:0;}
+    .sidebar-menu li a{display:flex;align-items:center;gap:1rem;padding:1rem 2rem;color:rgba(255,255,255,0.8);text-decoration:none;transition:all 0.3s;}
+    .sidebar-menu li a:hover,.sidebar-menu li a.active{background:rgba(255,255,255,0.1);color:white;}
+    .main-content{margin-left:260px;padding:2rem;}
+    .topbar{background:white;padding:1.5rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);margin-bottom:2rem;border-radius:1rem;display:flex;justify-content:space-between;align-items:center;}
+    .stat-card{background:white;padding:2rem;border-radius:1rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+    @media(max-width:768px){.sidebar{transform:translateX(-100%);}.sidebar.active{transform:translateX(0);}.main-content{margin-left:0;}}
+  </style>
+</head>
+<body style="background:#F5F5F5;">
+  <div id="header-placeholder"></div>
+  
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h4>🏗️ SmartBuild</h4>
+      <small style="color:rgba(255,255,255,0.6);">Admin Dashboard</small>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fas fa-briefcase"></i> Projects</a></li>
+      <li><a href="#"><i class="fas fa-file-invoice"></i> Quotations</a></li>
+      <li><a href="#"><i class="fas fa-users"></i> Clients</a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i> Inquiries</a></li>
+      <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <div>
+        <h4 class="mb-1">Welcome Back, Admin!</h4>
+        <p class="text-secondary mb-0">Here's what's happening with your projects</p>
+      </div>
+      <div class="d-flex gap-3">
+        <button class="btn btn-outline-primary"><i class="fas fa-bell"></i></button>
+        <button class="btn btn-primary">New Project</button>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <p class="text-secondary mb-2">Total Projects</p>
+              <h2 class="mb-0">528</h2>
+            </div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#FF9800,#FFC107);border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;">📊</div>
+          </div>
+          <small class="text-success"><i class="fas fa-arrow-up"></i> 12% from last month</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <p class="text-secondary mb-2">Active Projects</p>
+              <h2 class="mb-0">45</h2>
+            </div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#4CAF50,#66BB6A);border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;">🏗️</div>
+          </div>
+          <small class="text-success"><i class="fas fa-arrow-up"></i> 8% from last month</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <p class="text-secondary mb-2">New Inquiries</p>
+              <h2 class="mb-0">23</h2>
+            </div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#2196F3,#42A5F5);border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;">📧</div>
+          </div>
+          <small class="text-primary">5 pending review</small>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <p class="text-secondary mb-2">Revenue (This Month)</p>
+              <h2 class="mb-0">₹45L</h2>
+            </div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#9C27B0,#BA68C8);border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;">💰</div>
+          </div>
+          <small class="text-success"><i class="fas fa-arrow-up"></i> 15% from last month</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Projects -->
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="stat-card">
+          <h5 class="mb-4">Recent Projects</h5>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Project Name</th>
+                  <th>Client</th>
+                  <th>Status</th>
+                  <th>Progress</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Luxury Villa - Bangalore</td>
+                  <td>Rajesh Kumar</td>
+                  <td><span class="badge" style="background:#4CAF50;">In Progress</span></td>
+                  <td><div style="background:#E0E0E0;height:8px;border-radius:4px;"><div style="background:#FF9800;width:75%;height:100%;border-radius:4px;"></div></div></td>
+                  <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                </tr>
+                <tr>
+                  <td>Office Complex - Chennai</td>
+                  <td>Priya Mehta</td>
+                  <td><span class="badge" style="background:#FF9800;">Planning</span></td>
+                  <td><div style="background:#E0E0E0;height:8px;border-radius:4px;"><div style="background:#FF9800;width:25%;height:100%;border-radius:4px;"></div></div></td>
+                  <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                </tr>
+                <tr>
+                  <td>Interior Design - Mumbai</td>
+                  <td>Arun Sharma</td>
+                  <td><span class="badge" style="background:#2196F3;">Completed</span></td>
+                  <td><div style="background:#E0E0E0;height:8px;border-radius:4px;"><div style="background:#4CAF50;width:100%;height:100%;border-radius:4px;"></div></div></td>
+                  <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="stat-card">
+          <h5 class="mb-4">Recent Inquiries</h5>
+          <div class="d-flex flex-column gap-3">
+            <div class="p-3" style="background:#F5F5F5;border-radius:0.5rem;">
+              <h6 class="mb-1">New Construction Project</h6>
+              <small class="text-secondary">From: Vikram Singh</small>
+              <div class="mt-2"><span class="badge badge-primary">New</span></div>
+            </div>
+            <div class="p-3" style="background:#F5F5F5;border-radius:0.5rem;">
+              <h6 class="mb-1">Interior Design Query</h6>
+              <small class="text-secondary">From: Sneha Patel</small>
+              <div class="mt-2"><span class="badge badge-primary">New</span></div>
+            </div>
+            <div class="p-3" style="background:#F5F5F5;border-radius:0.5rem;">
+              <h6 class="mb-1">Renovation Project</h6>
+              <small class="text-secondary">From: Amit Verma</small>
+              <div class="mt-2"><span class="badge badge-secondary">Replied</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/ajax.js"></script>
+  <script>
+    fetch('../partials/header.html').then(r => r.text()).then(d => {
+      document.getElementById('header-placeholder').innerHTML = d;
+    }).catch(()=>{});
+    fetch('../partials/footer.html').then(r => r.text()).then(d => {
+      document.getElementById('footer-placeholder').innerHTML = d;
+    }).catch(()=>{});
+  </script>
+</body>
+</html>
+
